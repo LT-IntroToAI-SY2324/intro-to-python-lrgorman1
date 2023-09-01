@@ -32,35 +32,39 @@ print(z)
 # print(lane_tech[-1])
 # print(lane_tech[len(lane_tech)-1])
 
-# # Slices
-# print(lane_tech[1:3])
-# print(lane_tech[:3])
-# print(lane_tech[1:])
-# print(lane_tech[:])
+# Slices
+print(lane_tech[1:3])
+print(lane_tech[2:3])
+print(lane_tech[1:])
+print(lane_tech[:])
 
-# # Functions
+# Functions
 
-# # defining a function
-# def hello_world():
-#     print("hello world")
+# defining a function
+def hello_world():
+    print("hello world")
 
-# # calling a function
-# hello_world()
+def monkeycall():
+    print("OOO-OOO-AAA-AAA")
 
-# def add_two(n: int):
-#     """Takes a number and returns that number + 2
+# calling a function
+hello_world()
+monkeycall()
+
+def add_two(n: int):
+    """Takes a number and returns that number + 2
     
-#     Args: 
-#         n - a number
+    Args: 
+        n - a number
     
-#     Returns:
-#         the input number + 2
-#     """
-#     return n + 2
+    Returns:
+        the input number + 2
+    """
+    return n + 2
 
-# assert add_two(5) == 7, "add_two with input 5 test"
-# assert add_two(-2) == 0, "add_two with input -2 test"
-# assert add_two(0) == 2, "add_two with input 0 test"
+assert add_two(5) == 7, "add_two with input 5 test"
+assert add_two(-2) == 0, "add_two with input -2 test"
+assert add_two(0) == 2, "add_two with input 0 test"
 
 # # Loops
 
