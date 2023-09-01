@@ -23,7 +23,7 @@ print(type(flag))
 lane_tech = ["chicago", "high school", 1908, 60618, "addison/western"]
 print(lane_tech.reverse())
 print(lane_tech)
-z = lane_tech.pop(2)
+z = lane_tech.pop(4)
 print(z)
 
 

@@ -17,3 +17,11 @@ assert fizbuzz(5) == "Buzz", "fizzbuzz 5 test"
 assert fizbuzz(6) == "Fizz", "fizzbuzz 6 test"
 assert fizbuzz(15) == "FizzBuzz", "fizzbuzz 15 test"
 
+# Even or Odd
+# Write a program that takes an integer input and determines whether it's even or odd.
+num = 4
+
+if num % 2 == 0:
+    print(f"{num} is even.")
+else:
+    print(f"{num} is odd.")
