@@ -83,19 +83,40 @@ def mean(lst: List[int]) -> float:
     raise NotImplementedError("mean")
 
 
-def median(lst: List[int]) -> float:
-    """Takes an ordered list of numbers, and returns the median of the numbers.
+def find_median(lst: List[int]) -> float:
+    
+    numbers = {1,3,4,7,9,11}
+    numbers.sort()
 
-    If the list has an even number of values, it computes the mean of the two center
-    values.
+    n = len(numbers)
 
-    Args:
-        lst - an ordered list of numbers
+    if n % 2 == 1:
+        median = numbers[n // 2]
+    else:
+        middle1 = numbers[(n // 2) - 1]
+        middle2 = numbers[n // 2]
+        median = (middle1 + middle2) / 2.0
 
-    Returns:
-        the median of the passed in list
-    """
-    raise NotImplementedError("median")
+    return median
+numbers = [float(x) for x in input("Enter an ordered list of numbers separated by spaces: ").split()]
+
+# Calculate and print the median
+median = find_median(numbers)
+print(f"The median is: {median}")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 def duck_duck_goose(lst: List[str]) -> List[str]:

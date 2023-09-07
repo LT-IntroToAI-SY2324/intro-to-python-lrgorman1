@@ -13,11 +13,11 @@ Mr. Berg will look at all your files to determine what you have completed.  If t
 ## Reflection Questions
 
 1. What is your initial thoughts about the python programming language?
-
+I think its a much more efficient and convienient version of java. It has much more capabilities and freedoms than other programming languages.
 
 
 2. Describe some similarities and differences that you found between python and other programming languages you have used in the past?
-
+A lot of the same keywords are used to do the same things but there is a lot of small things like not having to use brackets or semi colons.
 
 
 3. What are some things that you learned through this assignment?
