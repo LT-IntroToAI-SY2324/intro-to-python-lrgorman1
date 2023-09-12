@@ -14,6 +14,8 @@ check, if you do not complete the generative AI portion of the assignment.
 
 from typing import List, TypeVar
 
+from numpy import median
+
 
 def absolute(n: int) -> int:
     """Gives the absolute value of the passed in number. Cannot use the built in
@@ -25,7 +27,10 @@ def absolute(n: int) -> int:
     Returns:
         the absolute value of the passed in number
     """
-    raise NotImplementedError("absolute")
+    if n<0:
+        return -1*n
+    else:
+        return n
 
 
 def factorial(n: int) -> int:
@@ -38,9 +43,12 @@ def factorial(n: int) -> int:
     Returns:
         factorial of the passed in number
     """
-    raise NotImplementedError("factorial")
-
-
+    
+    for x in range(1, n + 1):
+        # print(x)
+        result *= x
+    return result
+   
 T = TypeVar("T")
 
 
@@ -55,7 +63,14 @@ def every_other(lst: List[T]) -> List[T]:
     Returns:
         a list of every of other item in the original list starting with the first
     """
-    raise NotImplementedError("every_other")
+    new_list = []
+    for i in range(len(lst)):
+        if i % 2 == 0:
+            new_list.append(lst[i])
+    return new_list
+    return lst[::2]
+
+
 
 
 def sum_list(lst: List[int]) -> int:
@@ -68,20 +83,19 @@ def sum_list(lst: List[int]) -> int:
     Returns:
         the sum of the passed in list
     """
-    raise NotImplementedError("sum_list")
+    s = 0
+    for el in lst:
+        s = s + el
+    return el
+
 
 
 def mean(lst: List[int]) -> float:
-    """Takes a list of numbers, and returns the mean of the numbers.
+    total = sum(lst)
+    mean = total / len(lst)
+    print(f"The mean is: {mean}")
 
-    Args:
-        lst - a list of numbers
-
-    Returns:
-        the mean of the passed in list
-    """
-    raise NotImplementedError("mean")
-
+    
 
 def find_median(lst: List[int]) -> float:
     
@@ -98,26 +112,6 @@ def find_median(lst: List[int]) -> float:
         median = (middle1 + middle2) / 2.0
 
     return median
-numbers = [float(x) for x in input("Enter an ordered list of numbers separated by spaces: ").split()]
-
-# Calculate and print the median
-median = find_median(numbers)
-print(f"The median is: {median}")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 def duck_duck_goose(lst: List[str]) -> List[str]:
     """Given an list of names (strings), play 'duck duck goose' with it, knocking out
@@ -138,7 +132,20 @@ def duck_duck_goose(lst: List[str]) -> List[str]:
     Returns:
         the resulting list after playing duck duck goose
     """
-    raise NotImplementedError("duck_duck_goose")
+    remaining_players = names[:]
+    index = 0
+
+    while (remaining_players)>2:
+        # Count "duck" for each player
+        index = (index + 1) % len(remaining_players)
+        if index == 0:
+            # The player has been counted three times, so remove them
+            removed_player = remaining_players.pop(index - 1)
+            print(f"Knocked out: {removed_player}")
+        else:
+            print(f"Duck: {remaining_players[index]}")
+
+
 
 
 # this line causes the nested code to be skipped if the file is imported instead of run
@@ -156,5 +163,4 @@ if __name__ == "__main__":
 
     names = ["roscoe", "kim", "woz", "solin", "law", "remess"]
     assert duck_duck_goose(names) == ["roscoe", "law"]
-
     print("All tests passed!")
